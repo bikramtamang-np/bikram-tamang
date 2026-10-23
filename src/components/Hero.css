@@ -1,0 +1,96 @@
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(3.5rem, 12vh, 8rem) 0 clamp(3rem, 8vw, 5rem);
+}
+
+/* Fine dot grid, faded out towards the bottom. */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(var(--rule) 1px, transparent 1px);
+    background-size: 26px 26px;
+    opacity: 0.55;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 72%);
+    mask-image: linear-gradient(to bottom, #000 0%, transparent 72%);
+    pointer-events: none;
+}
+
+.hero-inner {
+    position: relative;
+}
+
+.hero-coords {
+    margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.hero-name {
+    font-size: clamp(2.9rem, 11vw, 7rem);
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.035em;
+}
+
+.hero-role {
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    max-width: 54ch;
+}
+
+.hero-lede {
+    font-size: clamp(1rem, 1.6vw, 1.075rem);
+    color: var(--ink-soft);
+    max-width: 58ch;
+    margin-bottom: 2.25rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+.hero-facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin: 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+}
+
+.hero-fact dt {
+    margin-bottom: 0.35rem;
+}
+
+.hero-fact dd {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 720px) {
+    .hero-facts {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .hero-fact {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+        border-bottom: 1px solid var(--rule);
+        padding-bottom: 0.75rem;
+    }
+
+    .hero-fact dt {
+        margin: 0;
+    }
+
+    .hero-fact dd {
+        text-align: right;
+    }
+}

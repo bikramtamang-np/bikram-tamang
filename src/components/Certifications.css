@@ -1,0 +1,41 @@
+.certs {
+    border-top: 1px solid var(--rule);
+}
+
+.cert {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.cert-main h3 {
+    margin-bottom: 0.3rem;
+}
+
+.cert-meta {
+    margin: 0;
+    text-transform: none;
+    letter-spacing: 0.04em;
+    font-size: 0.75rem;
+}
+
+.cert-link {
+    flex: none;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.cert-link-quiet {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 560px) {
+    .cert {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
