@@ -1,4 +1,5 @@
 import React from 'react';
+import PageHead from './PageHead';
 import './Certifications.css';
 
 const certs = [
@@ -22,41 +23,40 @@ const certs = [
 
 const Certifications = () => {
     return (
-        <section id="certifications" className="section">
-            <div className="wrap">
-                <header className="section-head">
-                    <span className="num mono">04</span>
-                    <h2>Certifications</h2>
-                </header>
+        <div className="wrap page-inner">
+            <PageHead
+                num="04"
+                title="Certifications"
+                lede="The AWS badge is verifiable at the issuer. The Broadway Infosys certificates are on request."
+            />
 
-                <ul className="certs">
-                    {certs.map((cert) => (
-                        <li className="cert reveal" key={cert.title}>
-                            <div className="cert-main">
-                                <h3>{cert.title}</h3>
-                                <p className="cert-meta mono">
-                                    {cert.issuer} · {cert.when}
-                                </p>
-                            </div>
-                            {cert.href ? (
-                                <a
-                                    className="link cert-link"
-                                    href={cert.href}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    Verify ↗
-                                </a>
-                            ) : (
-                                <span className="cert-link cert-link-quiet">
-                                    Certificate on request
-                                </span>
-                            )}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </section>
+            <ul className="certs">
+                {certs.map((cert) => (
+                    <li className="cert reveal" key={cert.title}>
+                        <div className="cert-main">
+                            <h3>{cert.title}</h3>
+                            <p className="cert-meta mono">
+                                {cert.issuer} · {cert.when}
+                            </p>
+                        </div>
+                        {cert.href ? (
+                            <a
+                                className="link cert-link"
+                                href={cert.href}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                Verify ↗
+                            </a>
+                        ) : (
+                            <span className="cert-link cert-link-quiet">
+                                Certificate on request
+                            </span>
+                        )}
+                    </li>
+                ))}
+            </ul>
+        </div>
     );
 };
 

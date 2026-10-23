@@ -1,7 +1,7 @@
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(1.5rem, 4vw, 3rem) clamp(2rem, 6vw, 4rem);
+    gap: clamp(1rem, 2.4vw, 2.4rem) clamp(2rem, 6vw, 4rem);
 }
 
 .skill-group {
@@ -9,14 +9,20 @@
     padding-top: 1rem;
 }
 
+/* The first row sits under the page-head rule, so it needs no rule of its own. */
+.skill-group:nth-child(-n + 2) {
+    border-top: 0;
+    padding-top: 0;
+}
+
 .skill-title {
-    margin: 0 0 0.9rem;
+    margin: 0 0 clamp(0.45rem, 1.1vh, 0.9rem);
     color: var(--accent);
     letter-spacing: 0.14em;
 }
 
 .skill-group li {
-    padding: 0.45rem 0;
+    padding: clamp(0.26rem, 0.65vh, 0.45rem) 0;
     color: var(--ink-soft);
     border-bottom: 1px solid color-mix(in srgb, var(--rule) 55%, transparent);
 }
@@ -28,5 +34,16 @@
 @media (max-width: 640px) {
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+
+    .skill-group:nth-child(n + 2) {
+        border-top: 1px solid var(--rule);
+        padding-top: 1rem;
+    }
+}
+
+@media (max-height: 760px) and (min-width: 781px) {
+    .skill-group li {
+        padding: 0.2rem 0;
     }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import PageHead from './PageHead';
 import './Experience.css';
 
 const work = [
@@ -52,34 +53,33 @@ const Entry = ({ what, where, when, note }) => (
 
 const Experience = () => {
     return (
-        <section id="experience" className="section">
-            <div className="wrap">
-                <header className="section-head">
-                    <span className="num mono">02</span>
-                    <h2>Experience &amp; education</h2>
-                </header>
+        <div className="wrap page-inner">
+            <PageHead
+                num="02"
+                title={'Experience & education'}
+                lede="What I have done, most recent first."
+            />
 
-                <div className="xp-grid">
-                    <div className="reveal">
-                        <p className="mono xp-label">Work</p>
-                        <ul className="entries">
-                            {work.map((item) => (
-                                <Entry key={item.what} {...item} />
-                            ))}
-                        </ul>
-                    </div>
+            <div className="xp-grid">
+                <div className="reveal">
+                    <p className="mono xp-label">Work</p>
+                    <ul className="entries">
+                        {work.map((item) => (
+                            <Entry key={item.what} {...item} />
+                        ))}
+                    </ul>
+                </div>
 
-                    <div className="reveal">
-                        <p className="mono xp-label">Education</p>
-                        <ul className="entries">
-                            {education.map((item) => (
-                                <Entry key={item.what} {...item} />
-                            ))}
-                        </ul>
-                    </div>
+                <div className="reveal">
+                    <p className="mono xp-label">Education</p>
+                    <ul className="entries">
+                        {education.map((item) => (
+                            <Entry key={item.what} {...item} />
+                        ))}
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
     );
 };
 

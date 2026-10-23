@@ -36,7 +36,7 @@
     font-size: clamp(1.15rem, 2.4vw, 1.4rem);
     line-height: 1.45;
     color: var(--ink);
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(0.9rem, 2vh, 1.5rem);
 }
 
 .about-text p {
@@ -44,8 +44,8 @@
 }
 
 .about-now {
-    margin-top: 2rem;
-    padding-top: 1.25rem;
+    margin-top: clamp(1rem, 2.4vh, 2rem);
+    padding-top: clamp(0.75rem, 1.8vh, 1.25rem);
     border-top: 1px solid var(--rule);
     color: var(--accent);
 }
@@ -57,5 +57,12 @@
 
     .about-photo {
         max-width: 200px;
+    }
+}
+
+@media (max-height: 760px) and (min-width: 781px) {
+    .about-now {
+        margin-top: 0.75rem;
+        padding-top: 0.55rem;
     }
 }

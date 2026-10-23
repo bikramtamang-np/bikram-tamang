@@ -1,4 +1,5 @@
 import React from 'react';
+import PageHead from './PageHead';
 import './Skills.css';
 
 const groups = [
@@ -31,27 +32,26 @@ const groups = [
 
 const Skills = () => {
     return (
-        <section id="skills" className="section">
-            <div className="wrap">
-                <header className="section-head">
-                    <span className="num mono">03</span>
-                    <h2>Skills</h2>
-                </header>
+        <div className="wrap page-inner">
+            <PageHead
+                num="03"
+                title="Skills"
+                lede="What I actually use, grouped by area rather than graded."
+            />
 
-                <div className="skills-grid">
-                    {groups.map((group) => (
-                        <div className="skill-group reveal" key={group.title}>
-                            <h3 className="mono skill-title">{group.title}</h3>
-                            <ul>
-                                {group.items.map((item) => (
-                                    <li key={item}>{item}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
-                </div>
+            <div className="skills-grid">
+                {groups.map((group) => (
+                    <div className="skill-group reveal" key={group.title}>
+                        <h3 className="mono skill-title">{group.title}</h3>
+                        <ul>
+                            {group.items.map((item) => (
+                                <li key={item}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
             </div>
-        </section>
+        </div>
     );
 };
 

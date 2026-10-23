@@ -1,5 +1,5 @@
 .certs {
-    border-top: 1px solid var(--rule);
+    border-top: 0;
 }
 
 .cert {
