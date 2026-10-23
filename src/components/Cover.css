@@ -180,3 +180,22 @@
         display: none;
     }
 }
+
+/* Narrow phones lose a line of height and the lede wraps once more; trim the
+   rhythm so the cover still lands on one screen. */
+@media (max-width: 480px) {
+    .cover {
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+    }
+
+    .cover-lede {
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+
+    .contents li a {
+        padding-top: clamp(0.28rem, 0.7vh, 0.5rem);
+        padding-bottom: clamp(0.28rem, 0.7vh, 0.5rem);
+    }
+}
